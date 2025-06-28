@@ -161,7 +161,19 @@ Example:
         pydub
 
         numpy
+# 📂 Project Structure
 
+video-script-generator/
+├── scripts/
+│   ├── generator.py
+│   ├── tts_coqui.py
+│   ├── tts_edge.py
+│   └── audio_mixer.py
+├── outputs/
+├── config.py
+├── main.py
+├── requirements.txt
+└── README.md
 #  🎯 6. License
 
 What it is:
@@ -177,96 +189,4 @@ Example:
 
     This project is licensed under the MIT License. You are free to use, modify, and distribute it with attribution.
 
-🟢 ✅ Example Putting it All Together
 
-Here’s how it looks in a README.md:
-
-# 🎬 Video Script Generator with TTS
-
-## ✅ Overview
-This project automates the creation of engaging video scripts and high-quality voiceovers using AI. With built-in templates, topic research, and TTS generation, it streamlines video production for creators and educators.
-
----
-
-## ✅ Features
-
-### ✅ Core Features
-- Automated topic research
-- Script templates (intro, body, CTA)
-- Adjustable script lengths
-- Multiple TTS voices
-- Emotion and pacing control
-- Background music mixing
-
-### 🎁 Bonus Features
-- Multi-language support
-- Voice cloning
-- Sound effects library
-- Storyboard generation
-
----
-
-## ✅ Installation Steps
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/YOUR_USERNAME/video-script-generator.git
-
-    Navigate to the folder:
-
-cd video-script-generator
-
-Create and activate a virtual environment:
-
-python -m venv venv
-
-    Windows:
-
-    .\venv\Scripts\activate
-
-Install dependencies:
-
-    pip install --upgrade pip setuptools wheel
-    pip install torch TTS openai edge-tts pydub numpy
-
-✅ Usage Examples
-
-Generate a script and TTS audio:
-
-python main.py --topic "How to Start a YouTube Channel" --length "short" --voice "coqui_en"
-
-Outputs:
-
-    outputs/script.txt
-
-    outputs/audio.wav
-
-✅ Requirements
-
-    Python 3.8+
-
-    Git
-
-    Microsoft C++ Build Tools (Windows)
-
-    pip packages:
-
-        torch
-
-        TTS
-
-        openai
-
-        edge-tts
-
-        pydub
-
-        numpy
-
-#  License
-
-This project is licensed under the MIT License.
-
-
----
-
-✅ If you want, I can **generate a ready-to-copy file** or customize this further
