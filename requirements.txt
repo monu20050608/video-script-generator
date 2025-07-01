@@ -1,5 +1,0 @@
-openai
-Coqui-ai TTS
-edge-tts
-pydub
-numpy
