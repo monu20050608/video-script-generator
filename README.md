@@ -1,192 +1,113 @@
-# video-script-generator
- #  🎯 1. Overview
+#  Video Script Generator with TTS and Background Audio
 
-What it is:
-A short summary that tells people:
+This project automatically generates video scripts from a topic or keyword, converts the script to natural speech using TTS, and mixes it with optional background music and sound effects.
 
-    What your project does
+---
 
-    Why it exists
+## Features
 
-    Who it’s for
+###  Script Generation
+- Automated topic research from Google
+- Dynamic script structure with intro, body, and call to action
+- Multiple video lengths: short, medium, long
+- Templated script formatting
 
-How to write it:
+###  Voice Generation
+- Text-to-speech with Microsoft Edge TTS
+- Multiple voice options
+- Adjustable speaking rate
+- Future-ready for emotion control (styles)
 
-    2–5 sentences max
+###  Audio Production
+- Optional background music support (MP3/WAV)
+- Sound effects support (WAV)
+- Auto-mixing of voice, music, and effects
+- Clean WAV output with timestamped filenames
 
-    Simple language
+---
 
-    Avoid too much technical jargon
+##  Requirements
 
-Example:
+- Python 3.8+
+- ffmpeg installed and added to PATH
+- Internet connection (for TTS and Google topics)
+- Dependencies (see below)
 
-    This project is a Python-based Video Script Generator that automates creating video scripts and voiceovers. It combines AI-powered topic research, structured script templates, and advanced TTS (text-to-speech) models. Ideal for YouTubers, educators, and marketers, it helps produce engaging video content quickly and easily.
+---
 
-#  🎯 2. Features (Core and Optional)
+##  Installation
 
-What it is:
-A list of what your project can do.
-Split into:
-
-    Core Features (essential)
-
-    Bonus/Optional Features (advanced or nice-to-have)
-
-How to write it:
-
-    Use bullet points
-
-    Short phrases (not paragraphs)
-
-Example:
-
-#  Core Features
-
-    Automated topic research for video scripts
-
-    Script templates with hooks and CTAs
-
-    Adjustable script length (short/medium/long)
-
-    Multiple TTS voice options
-
-    Emotion and pacing control
-
-    Background music mixing
-
-#  Bonus Features
-
-    Multi-language support
-
-    Voice cloning (experimental)
-
-    Sound effects library
-
-    Storyboard generation with scene descriptions
-
-#  🎯 3. Installation Steps
-
-What it is:
-Instructions on how to set up your project so it runs on someone else’s machine.
-
-How to write it:
-
-    Step-by-step numbered list
-
-    Include prerequisites (Python version, Git)
-
-    Example commands
-
-Example:
-
-    Clone the repository
-
+```bash
 git clone https://github.com/monu20050608/video-script-generator.git
-
-Navigate to the project folder
-
 cd video-script-generator
-
-Create and activate a virtual environment
-
 python -m venv venv
+venv\Scripts\activate    # or source venv/bin/activate on Linux/macOS
+pip install -r requirements.txt
 
-    Windows:
+ Environment Setup
 
-.\venv\Scripts\activate
+Create a .env file and add your SerpAPI key:
 
-Linux/macOS:
+SERPAPI_KEY=your_serpapi_key_here
 
-    source venv/bin/activate
+    Or set it in your system environment variables.
 
-Install dependencies
+ Usage
+🔸 Generate a script with a topic:
 
-    pip install --upgrade pip setuptools wheel
-    pip install torch
-    pip install TTS openai edge-tts pydub numpy
+python main.py --topic "Blockchain Technology"
 
-#  🎯 4. Usage Examples
+🔸 Or search Google for ideas:
 
-What it is:
-Examples of how to run your project and what commands to use.
+python main.py --query "Latest tech trends"
 
-How to write it:
+🔸 Add background music and SFX:
 
-    Show actual commands
+python create_background_music.py
 
-    Explain what they do
+python create_beep_sfx.py
 
-Example:
-Generate a script for “How to Bake a Cake”:
+python main.py --topic "AI in Healthcare" --music background.wav --sfx sfx/beep.wav --sfx_position 3000
 
-python main.py --topic "How to Bake a Cake" --length "medium" --voice "coqui_en"
+📂 Output
 
-Expected output:
+All generated files are saved in the /outputs/ folder:
 
-    outputs/script.txt: The generated script
+    *_script.txt – the generated script
 
-    outputs/audio.wav: TTS audio file
+    *_voice.wav – TTS audio
 
-#  🎯 5. Requirements
+    *_final_mix.wav – mixed voice + music + SFX
 
-What it is:
-A list of everything needed to run the project.
+🧪 Testing Helpers
 
-How to write it:
+Use the included scripts to generate dummy files:
 
-    Mention Python version
+python create_beep_sfx.py           # Creates sfx/beep.wav
+python create_background_music.py   # Creates background.wav
 
-    Mention major packages
+🎯 Roadmap
 
-    Mention OS requirements if any
+Emotion style support (style=cheerful, sad, etc.)
 
-Example:
+Voice cloning (Coqui TTS)
 
-    Python 3.8 or higher
+Export to MP3
 
-    Git
+Storyboard generation
 
-    Microsoft Visual C++ Build Tools (for Windows)
+    GUI version
 
-    Packages:
+🧠 Resources
 
-        torch
+    Coqui TTS
 
-        TTS
+    Edge-TTS
 
-        openai
+    SerpAPI
 
-        edge-tts
+    Free Music & SFX
 
-        pydub
+👨‍💻 Created By
 
-        numpy
-# 📂 Project Structure
-
-video-script-generator/
-├── scripts/
-│   ├── generator.py
-│   ├── tts_coqui.py
-│   ├── tts_edge.py
-│   └── audio_mixer.py
-├── outputs/
-├── config.py
-├── main.py
-├── requirements.txt
-└── README.md
-#  🎯 6. License
-
-What it is:
-Legal information that tells others how they can use your code.
-
-How to write it:
-
-    State the license (MIT, GPL, Apache)
-
-    Optionally, include a LICENSE file
-
-Example:
-
-    This project is licensed under the MIT License. You are free to use, modify, and distribute it with attribution.
-
-
+Chaman Yadav
